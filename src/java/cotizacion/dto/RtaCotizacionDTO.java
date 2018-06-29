@@ -5,11 +5,15 @@
  */
 package cotizacion.dto;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Julian DCJ
  */
-public class RtaCotizacionDTO {
+public class RtaCotizacionDTO implements Serializable{
+    
+    private static final long serialVersionUID = 1L;
     
     private String codigoRespuesta;
     private String nombreSocio;
@@ -65,6 +69,11 @@ public class RtaCotizacionDTO {
 
     public void setMensajeRespuesta(String mensajeRespuesta) {
         this.mensajeRespuesta = mensajeRespuesta;
+    }
+
+    @Override
+    public String toString() {
+        return "RtaCotizacionDTO{" + "codigoRespuesta=" + codigoRespuesta + ", nombreSocio=" + nombreSocio + ", valorCuotaMensual=" + valorCuotaMensual + ", pagoTotalCredito=" + pagoTotalCredito + ", tasaInteres=" + tasaInteres + ", mensajeRespuesta=" + mensajeRespuesta + '}';
     }
     
 }

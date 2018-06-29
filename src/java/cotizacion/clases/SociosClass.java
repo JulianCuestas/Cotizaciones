@@ -15,6 +15,7 @@ import javax.ejb.Stateless;
  *
  * @author Julian DCJ
  */
+@Stateless
 public class SociosClass implements CotizacionRemote {
 
     private SociosDAO sociosDAO;
@@ -23,7 +24,7 @@ public class SociosClass implements CotizacionRemote {
 
     @Override
     public RtaCotizacionDTO generarCotizacion(double montoSolicitado) {
-
+        rtaCotizacionDTO = new RtaCotizacionDTO();
         Socios socio = sociosDAO.consultarSocioDisponible(montoSolicitado);
 
         if (socio != null) {
